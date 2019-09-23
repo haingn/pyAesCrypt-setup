@@ -5,7 +5,7 @@ if (( $EUID != 0 )); then
     exit 1
 fi
 
-apt-get update && apt-get upgrade
+apt-get update -y && apt-get upgrade -y && apt autoremove -y && apt --fix-broken install -y && reboot
 apt install python3-pip
 pip3 install pyAesCrypt
 cd ~/
